@@ -24,8 +24,6 @@ project:
 # This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
 pinout:
   # Inputs
- pinout:
-  # Inputs (not used in your design)
   ui[0]: "unused"
   ui[1]: "unused"
   ui[2]: "unused"
