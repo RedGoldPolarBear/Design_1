@@ -4,10 +4,7 @@
 import cocotb
 from cocotb.clock import Clock
 from cocotb.triggers import ClockCycles
-from cocotb.result import TestSuccess  # needed for pass
 
-def cocotb_pass_test():
-    raise TestSuccess()
 
 @cocotb.test()
 async def test_project(dut):
@@ -28,10 +25,11 @@ async def test_project(dut):
 
     dut._log.info("Test project behavior")
 
-    # Set inputs (not really used for VGA, but fine)
+    # Set the input values you want to test
     dut.ui_in.value = 20
     dut.uio_in.value = 30
 
     # Let the VGA design run for a bit
     await ClockCycles(dut.clk, 100)
-    cocotb_pass_test()
+
+    cocotb.pass_test()
